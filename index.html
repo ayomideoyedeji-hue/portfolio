@@ -267,22 +267,10 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 0;
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.4s;
         }
 
         .project-card:hover {
@@ -291,20 +279,41 @@
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .project-card:hover::before {
-            opacity: 1;
-        }
-
-        .project-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+        .project-banner {
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-            background: rgba(108, 92, 231, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, var(--bg-card) 100%);
+        }
+
+        .project-banner .banner-icon {
+            font-size: 3rem;
+            z-index: 1;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+        }
+
+        .project-card:nth-child(1) .project-banner { background: linear-gradient(135deg, #6c5ce7, #a855f7); }
+        .project-card:nth-child(2) .project-banner { background: linear-gradient(135deg, #00d2ff, #3a7bd5); }
+        .project-card:nth-child(3) .project-banner { background: linear-gradient(135deg, #11998e, #38ef7d); }
+        .project-card:nth-child(4) .project-banner { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
+        .project-card:nth-child(5) .project-banner { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .project-card:nth-child(6) .project-banner { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .project-card:nth-child(7) .project-banner { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .project-card:nth-child(8) .project-banner { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .project-card:nth-child(9) .project-banner { background: linear-gradient(135deg, #fa709a, #fee140); }
+        .project-card:nth-child(10) .project-banner { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+
+        .project-body {
+            padding: 1.5rem 2rem 2rem;
         }
 
         .project-card h3 {
@@ -556,131 +565,151 @@
 
         <div class="projects-grid">
             <div class="project-card reveal">
-                <div class="project-icon">💼</div>
-                <h3>Job Automation</h3>
-                <p>End-to-end job hunting pipeline — scrapes LinkedIn listings via Apify, uses GPT-4 to evaluate and filter matches, generates cover letters in Google Docs, and logs results to Google Sheets.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>Apify</span>
-                    <span>OpenAI</span>
-                    <span>Google Docs</span>
-                    <span>Gmail</span>
-                    <span>Google Sheets</span>
+                <div class="project-banner"><span class="banner-icon">💼</span></div>
+                <div class="project-body">
+                    <h3>Job Automation</h3>
+                    <p>End-to-end job hunting pipeline — scrapes LinkedIn listings via Apify, uses GPT-4 to evaluate and filter matches, generates cover letters in Google Docs, and logs results to Google Sheets.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>Apify</span>
+                        <span>OpenAI</span>
+                        <span>Google Docs</span>
+                        <span>Gmail</span>
+                        <span>Google Sheets</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">🤖</div>
-                <h3>Recruiter Agent</h3>
-                <p>AI-powered recruitment assistant that monitors Gmail for applications, extracts CV data from Google Drive, scores candidates with structured AI output, and logs results to Sheets.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>Gmail Trigger</span>
-                    <span>Google Drive</span>
-                    <span>OpenAI Agent</span>
-                    <span>Google Sheets</span>
+                <div class="project-banner"><span class="banner-icon">🤖</span></div>
+                <div class="project-body">
+                    <h3>Recruiter Agent</h3>
+                    <p>AI-powered recruitment assistant that monitors Gmail for applications, extracts CV data from Google Drive, scores candidates with structured AI output, and logs results to Sheets.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>Gmail Trigger</span>
+                        <span>Google Drive</span>
+                        <span>OpenAI Agent</span>
+                        <span>Google Sheets</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">💬</div>
-                <h3>WhatsApp Business AI Agent</h3>
-                <p>Conversational AI assistant for business operations — listens on WhatsApp, processes customer messages through an AI agent, and responds automatically.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>WhatsApp</span>
-                    <span>OpenAI Agent</span>
-                    <span>Business Automation</span>
+                <div class="project-banner"><span class="banner-icon">💬</span></div>
+                <div class="project-body">
+                    <h3>WhatsApp Business AI Agent</h3>
+                    <p>Conversational AI assistant for business operations — listens on WhatsApp, processes customer messages through an AI agent, and responds automatically.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>WhatsApp</span>
+                        <span>OpenAI Agent</span>
+                        <span>Business Automation</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">📧</div>
-                <h3>Easy Day Email Agent</h3>
-                <p>Smart email manager that monitors Gmail, uses AI to triage and respond to emails, manages Google Calendar events, logs to Sheets, and sends Slack notifications.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>Gmail</span>
-                    <span>Google Calendar</span>
-                    <span>Slack</span>
-                    <span>OpenAI Agent</span>
+                <div class="project-banner"><span class="banner-icon">📧</span></div>
+                <div class="project-body">
+                    <h3>Easy Day Email Agent</h3>
+                    <p>Smart email manager that monitors Gmail, uses AI to triage and respond to emails, manages Google Calendar events, logs to Sheets, and sends Slack notifications.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>Gmail</span>
+                        <span>Google Calendar</span>
+                        <span>Slack</span>
+                        <span>OpenAI Agent</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">⛪</div>
-                <h3>ServiceFlow — Church Service Timer AI Agent</h3>
-                <p>AI-powered church service management system with real-time timer controls, conversational interface, and memory for managing service segments dynamically.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>Webhooks</span>
-                    <span>OpenAI Agent</span>
-                    <span>Memory Buffer</span>
-                    <span>Custom Code</span>
+                <div class="project-banner"><span class="banner-icon">⛪</span></div>
+                <div class="project-body">
+                    <h3>ServiceFlow — Church Service Timer AI Agent</h3>
+                    <p>AI-powered church service management system with real-time timer controls, conversational interface, and memory for managing service segments dynamically.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>Webhooks</span>
+                        <span>OpenAI Agent</span>
+                        <span>Memory Buffer</span>
+                        <span>Custom Code</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">✍️</div>
-                <h3>AI Blog Writing Pipeline</h3>
-                <p>Automated content creation system — triggers from Airtable, researches topics via HTTP requests, generates long-form blog posts with AI, and publishes to Google Docs with email notifications.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>Airtable</span>
-                    <span>OpenAI</span>
-                    <span>Google Docs</span>
-                    <span>Gmail</span>
+                <div class="project-banner"><span class="banner-icon">✍️</span></div>
+                <div class="project-body">
+                    <h3>AI Blog Writing Pipeline</h3>
+                    <p>Automated content creation system — triggers from Airtable, researches topics via HTTP requests, generates long-form blog posts with AI, and publishes to Google Docs with email notifications.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>Airtable</span>
+                        <span>OpenAI</span>
+                        <span>Google Docs</span>
+                        <span>Gmail</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">📋</div>
-                <h3>AI Task Prioritizer for Asana</h3>
-                <p>Monitors Asana for new tasks, uses AI to analyze priority and effort, then automatically re-organizes and labels tasks with structured recommendations.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>Asana</span>
-                    <span>OpenAI Agent</span>
-                    <span>Structured Output</span>
+                <div class="project-banner"><span class="banner-icon">📋</span></div>
+                <div class="project-body">
+                    <h3>AI Task Prioritizer for Asana</h3>
+                    <p>Monitors Asana for new tasks, uses AI to analyze priority and effort, then automatically re-organizes and labels tasks with structured recommendations.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>Asana</span>
+                        <span>OpenAI Agent</span>
+                        <span>Structured Output</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">📰</div>
-                <h3>World News AI Digest</h3>
-                <p>Scheduled RSS feed aggregator that collects global news, uses AI to summarize and curate the top stories, and delivers a daily digest via email.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>RSS Feeds</span>
-                    <span>OpenAI Agent</span>
-                    <span>Gmail</span>
-                    <span>Scheduled</span>
+                <div class="project-banner"><span class="banner-icon">📰</span></div>
+                <div class="project-body">
+                    <h3>World News AI Digest</h3>
+                    <p>Scheduled RSS feed aggregator that collects global news, uses AI to summarize and curate the top stories, and delivers a daily digest via email.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>RSS Feeds</span>
+                        <span>OpenAI Agent</span>
+                        <span>Gmail</span>
+                        <span>Scheduled</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">📝</div>
-                <h3>Email Summariser</h3>
-                <p>Multi-channel notification system that reads incoming emails, converts content to markdown, generates AI summaries, and dispatches to Telegram and WhatsApp.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>IMAP</span>
-                    <span>OpenAI</span>
-                    <span>Telegram</span>
-                    <span>WhatsApp</span>
+                <div class="project-banner"><span class="banner-icon">📝</span></div>
+                <div class="project-body">
+                    <h3>Email Summariser</h3>
+                    <p>Multi-channel notification system that reads incoming emails, converts content to markdown, generates AI summaries, and dispatches to Telegram and WhatsApp.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>IMAP</span>
+                        <span>OpenAI</span>
+                        <span>Telegram</span>
+                        <span>WhatsApp</span>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal">
-                <div class="project-icon">📊</div>
-                <h3>GPT Project Task Manager</h3>
-                <p>Chat-based AI assistant that breaks down project ideas into structured tasks, validates with the user, and automatically populates Google Sheets for tracking.</p>
-                <div class="project-tags">
-                    <span>n8n</span>
-                    <span>Chat Interface</span>
-                    <span>OpenAI Agent</span>
-                    <span>Google Sheets</span>
-                    <span>Memory</span>
+                <div class="project-banner"><span class="banner-icon">📊</span></div>
+                <div class="project-body">
+                    <h3>GPT Project Task Manager</h3>
+                    <p>Chat-based AI assistant that breaks down project ideas into structured tasks, validates with the user, and automatically populates Google Sheets for tracking.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>Chat Interface</span>
+                        <span>OpenAI Agent</span>
+                        <span>Google Sheets</span>
+                        <span>Memory</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -762,7 +791,7 @@
             <h3>Get In Touch</h3>
             <p>Reach out through any of these channels — I'd love to hear from you.</p>
             <div class="contact-links">
-                <a href="https://mail.google.com/mail/?view=cm&to=ayomideoyedeji@gmail.com" class="contact-link" target="_blank">
+                <a href="mailto:ayomideoyedeji@gmail.com" class="contact-link">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg>
                     Email
                 </a>
