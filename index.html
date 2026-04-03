@@ -777,10 +777,10 @@
 
         <div class="projects-grid">
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Form Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Apify Scraper</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Filter</span><span class="wf-arrow">&rarr;</span><span class="wf-node">OpenAI</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Docs</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Merge</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Sheets</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Job Form</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Scrape Jobs</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Filter</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Check Relevance</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Filter Sponsors</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Write Cover Letter</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Write CV</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail</span></div></div>
                 <div class="project-body">
-                    <h3>Job Automation</h3>
-                    <p>End-to-end job hunting pipeline — scrapes LinkedIn listings via Apify, uses GPT-4 to evaluate and filter matches, generates cover letters in Google Docs, and logs results to Google Sheets.</p>
+                    <h3>Job Automation V3</h3>
+                    <p>Advanced job hunting pipeline — scrapes listings from multiple job sites, uses GPT-4 to filter by relevance and sponsorship availability, generates tailored cover letters and CVs, and sends applications automatically.</p>
                     <div class="project-tags">
                         <span>n8n</span>
                         <span>Apify</span>
@@ -794,10 +794,27 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Gmail Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Drive</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Switch</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Extract File</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Info Extractor</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Sheets</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">WA Webhook</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Dedup Check</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Order Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Order Confirmed?</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Email Approval</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Save Order</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Update Inventory</span></div></div>
+                <div class="project-body">
+                    <h3>Banko Chow — WhatsApp Order Management</h3>
+                    <p>Full-stack order management system for a food business — receives WhatsApp orders, processes them with an AI agent, sends email approval requests, confirms orders, and auto-updates inventory in Google Sheets.</p>
+                    <div class="project-tags">
+                        <span>n8n</span>
+                        <span>WhatsApp</span>
+                        <span>GPT-4o Mini</span>
+                        <span>Email Approval</span>
+                        <span>Google Sheets</span>
+                        <span>Chat Memory</span>
+                    </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Gmail Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Upload File</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Switch</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Extract File</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Standardize</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Sheets</span></div></div>
                 <div class="project-body">
                     <h3>Recruiter Agent</h3>
-                    <p>AI-powered recruitment assistant that monitors Gmail for applications, extracts CV data from Google Drive, scores candidates with structured AI output, and logs results to Sheets.</p>
+                    <p>AI-powered recruitment assistant that monitors Gmail for applications, extracts and standardizes CV data, scores candidates with structured AI output, and logs results to Sheets.</p>
                     <div class="project-tags">
                         <span>n8n</span>
                         <span>Gmail Trigger</span>
@@ -810,22 +827,7 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">WhatsApp Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">WhatsApp Reply</span><span class="wf-node" style="margin-left:auto">OpenAI GPT-4</span></div></div>
-                <div class="project-body">
-                    <h3>WhatsApp Business AI Agent</h3>
-                    <p>Conversational AI assistant for business operations — listens on WhatsApp, processes customer messages through an AI agent, and responds automatically.</p>
-                    <div class="project-tags">
-                        <span>n8n</span>
-                        <span>WhatsApp</span>
-                        <span>OpenAI Agent</span>
-                        <span>Business Automation</span>
-                    </div>
-                    <a href="#" class="project-link">View Project &rarr;</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Gmail Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail Tool</span><span class="wf-node">Calendar</span><span class="wf-node">Sheets</span><span class="wf-node">Slack</span><span class="wf-node" style="margin-left:auto">GPT-4o</span><span class="wf-node">Memory</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">New Email</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Email Assistant</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail Tool</span><span class="wf-node">Calendar Tool</span><span class="wf-node">Slack</span><span class="wf-node">Sheets Log</span><span class="wf-node" style="margin-left:auto">GPT-4o</span><span class="wf-node">Memory</span></div></div>
                 <div class="project-body">
                     <h3>Easy Day Email Agent</h3>
                     <p>Smart email manager that monitors Gmail, uses AI to triage and respond to emails, manages Google Calendar events, logs to Sheets, and sends Slack notifications.</p>
@@ -841,7 +843,7 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Chat Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Service Timer</span><span class="wf-node">Schedule</span><span class="wf-node">Announcer</span><span class="wf-node" style="margin-left:auto">OpenAI</span><span class="wf-node">Memory</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Chat Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">ServiceFlow Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Service Timer</span><span class="wf-node">Schedule Overview</span><span class="wf-node">Announcer</span><span class="wf-node" style="margin-left:auto">OpenAI</span><span class="wf-node">Memory</span></div></div>
                 <div class="project-body">
                     <h3>ServiceFlow — Church Service Timer AI Agent</h3>
                     <p>AI-powered church service management system with real-time timer controls, conversational interface, and memory for managing service segments dynamically.</p>
@@ -857,7 +859,7 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Airtable Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">HTTP Request</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Code</span><span class="wf-arrow">&rarr;</span><span class="wf-node">OpenAI</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Docs</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Airtable Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">HTTP Request</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Code</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Docs</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail</span></div></div>
                 <div class="project-body">
                     <h3>AI Blog Writing Pipeline</h3>
                     <p>Automated content creation system — triggers from Airtable, researches topics via HTTP requests, generates long-form blog posts with AI, and publishes to Google Docs with email notifications.</p>
@@ -873,7 +875,7 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Asana Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Get Tasks</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Code</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Prioritizer</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Extract</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Update Asana</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Add Tags</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Asana Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Get All Tasks</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Prepare Context</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Prioritizer</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Extract Tasks</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Update Priority</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Add Tags</span></div></div>
                 <div class="project-body">
                     <h3>AI Task Prioritizer for Asana</h3>
                     <p>Monitors Asana for new tasks, uses AI to analyze priority and effort, then automatically re-organizes and labels tasks with structured recommendations.</p>
@@ -891,7 +893,7 @@
                 <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Schedule 7AM</span><span class="wf-arrow">&rarr;</span><span class="wf-node">RSS Tech</span><span class="wf-node">RSS World</span><span class="wf-arrow">&rarr;</span><span class="wf-node">AI Summary Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Format Output</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail</span></div></div>
                 <div class="project-body">
                     <h3>World News AI Digest</h3>
-                    <p>Scheduled RSS feed aggregator that collects global news, uses AI to summarize and curate the top stories, and delivers a daily digest via email.</p>
+                    <p>Scheduled RSS feed aggregator that collects global news, uses AI to summarize and curate the top stories, and delivers a daily digest via email every morning.</p>
                     <div class="project-tags">
                         <span>n8n</span>
                         <span>RSS Feeds</span>
@@ -904,7 +906,7 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">IMAP Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Markdown</span><span class="wf-arrow">&rarr;</span><span class="wf-node">OpenAI Summarise</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail</span><span class="wf-node">Telegram</span><span class="wf-node">WhatsApp</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">IMAP Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Markdown</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Summarise Email</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Gmail</span><span class="wf-node">Telegram</span><span class="wf-node">WhatsApp</span></div></div>
                 <div class="project-body">
                     <h3>Email Summariser</h3>
                     <p>Multi-channel notification system that reads incoming emails, converts content to markdown, generates AI summaries, and dispatches to Telegram and WhatsApp.</p>
@@ -920,14 +922,14 @@
             </div>
 
             <div class="project-card reveal">
-                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Chat Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">PM Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Have All Info?</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Write JSON</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Sheets</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Respond</span><span class="wf-node" style="margin-left:auto">Memory</span></div></div>
+                <div class="project-banner"><div class="workflow-nodes"><span class="wf-node">Chat Trigger</span><span class="wf-arrow">&rarr;</span><span class="wf-node">PM Agent</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Have All Info?</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Structured Output</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Add Task</span><span class="wf-arrow">&rarr;</span><span class="wf-node">Google Sheets</span><span class="wf-node" style="margin-left:auto">GPT-4.1-mini</span></div></div>
                 <div class="project-body">
                     <h3>GPT Project Task Manager</h3>
-                    <p>Chat-based AI assistant that breaks down project ideas into structured tasks, validates with the user, and automatically populates Google Sheets for tracking.</p>
+                    <p>Chat-based AI assistant powered by GPT-4.1-mini that breaks down project ideas into structured tasks, validates with the user, and automatically populates Google Sheets for tracking.</p>
                     <div class="project-tags">
                         <span>n8n</span>
                         <span>Chat Interface</span>
-                        <span>OpenAI Agent</span>
+                        <span>GPT-4.1-mini</span>
                         <span>Google Sheets</span>
                         <span>Memory</span>
                     </div>
