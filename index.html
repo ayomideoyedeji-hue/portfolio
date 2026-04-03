@@ -587,6 +587,110 @@
             0%, 100% { opacity: 0; transform: scale(0); }
             50% { opacity: 0.6; transform: scale(1); }
         }
+
+        /* ===== HERO AVATAR ===== */
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 1.8rem;
+            position: relative;
+            box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.2), 0 0 40px rgba(108, 92, 231, 0.3);
+            animation: avatarPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes avatarPulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.2), 0 0 40px rgba(108, 92, 231, 0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(108, 92, 231, 0.1), 0 0 60px rgba(0, 210, 255, 0.35); }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(108, 92, 231, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .stat-card .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .stat-card .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== PROJECT LINK ===== */
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: gap 0.2s;
+        }
+
+        .project-link:hover {
+            gap: 0.7rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -594,6 +698,7 @@
     <nav>
         <div class="nav-logo">EO</div>
         <ul class="nav-links">
+            <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -611,6 +716,7 @@
             <div class="grid-overlay"></div>
         </div>
         <div class="hero-content reveal">
+            <div class="hero-avatar">EO</div>
             <div class="hero-badge">AI Engineer</div>
             <h1>
                 Hi, I'm <span class="gradient-text">Efioshomoshi</span><br>
@@ -622,6 +728,39 @@
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="reveal">
+            <p class="section-label">About Me</p>
+            <h2 class="section-title">Who I Am</h2>
+        </div>
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p>I'm Efioshomoshi Oyedeji, an AI Engineer with a passion for building intelligent automation systems that actually work in the real world.</p>
+                <p>I specialize in designing end-to-end AI workflows — from web scraping and data extraction to autonomous agents and LLM-powered pipelines. My work helps teams move faster, make smarter decisions, and automate the repetitive so they can focus on what matters.</p>
+                <p>When I'm not building workflows, I'm exploring new AI models, experimenting with agent architectures, and finding creative ways to connect systems that were never meant to talk to each other.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">AI Agents Deployed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">n8n</span>
+                    <span class="stat-label">Primary Platform</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">GPT-4</span>
+                    <span class="stat-label">AI Backbone</span>
+                </div>
             </div>
         </div>
     </section>
@@ -648,6 +787,7 @@
                         <span>Gmail</span>
                         <span>Google Sheets</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -663,6 +803,7 @@
                         <span>OpenAI Agent</span>
                         <span>Google Sheets</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -677,6 +818,7 @@
                         <span>OpenAI Agent</span>
                         <span>Business Automation</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -692,6 +834,7 @@
                         <span>Slack</span>
                         <span>OpenAI Agent</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -707,6 +850,7 @@
                         <span>Memory Buffer</span>
                         <span>Custom Code</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -722,6 +866,7 @@
                         <span>Google Docs</span>
                         <span>Gmail</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -736,6 +881,7 @@
                         <span>OpenAI Agent</span>
                         <span>Structured Output</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -751,6 +897,7 @@
                         <span>Gmail</span>
                         <span>Scheduled</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -766,6 +913,7 @@
                         <span>Telegram</span>
                         <span>WhatsApp</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -781,6 +929,7 @@
                         <span>Google Sheets</span>
                         <span>Memory</span>
                     </div>
+                    <a href="#" class="project-link">View Project &rarr;</a>
                 </div>
             </div>
         </div>
@@ -894,7 +1043,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Efioshomoshi Oyedeji. Built with passion for AI.</p>
+        <p>&copy; 2026 Efioshomoshi Oyedeji. Built with passion for AI.</p>
     </footer>
 
     <script>
