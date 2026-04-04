@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d18"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <linearGradient id="gr" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <circle cx="200" cy="200" r="300" fill="#6c5ce7" fill-opacity="0.06"/>
+  <circle cx="900" cy="800" r="280" fill="#00d2ff" fill-opacity="0.05"/>
+
+  <!-- Slide number -->
+  <text x="80" y="110" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" fill="#8888a0" letter-spacing="2">06 / 07</text>
+  <rect x="80" y="120" width="920" height="1.5" fill="white" fill-opacity="0.06"/>
+
+  <!-- Eyebrow -->
+  <rect x="80" y="180" width="6" height="60" rx="3" fill="url(#gr)"/>
+  <text x="106" y="222" font-family="'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="700" fill="#6c5ce7" letter-spacing="2">THIS PAGE</text>
+
+  <text x="80" y="360" font-family="'Segoe UI',system-ui,sans-serif" font-size="68" font-weight="800" fill="#e8e8f0" letter-spacing="-2">What you'll get</text>
+  <text x="80" y="440" font-family="'Segoe UI',system-ui,sans-serif" font-size="68" font-weight="800" fill="#e8e8f0" letter-spacing="-2">by following 👇</text>
+
+  <!-- Content list -->
+  <rect x="80" y="490" width="920" height="78" rx="12" fill="#16161f" stroke="rgba(108,92,231,0.2)" stroke-width="1"/>
+  <text x="130" y="539" font-family="'Segoe UI',system-ui,sans-serif" font-size="32" fill="url(#gr)" font-weight="700">▶</text>
+  <text x="180" y="539" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#e8e8f0">Live workflow demos — watch AI run in real time</text>
+
+  <rect x="80" y="584" width="920" height="78" rx="12" fill="#16161f" stroke="rgba(108,92,231,0.15)" stroke-width="1"/>
+  <text x="130" y="633" font-family="'Segoe UI',system-ui,sans-serif" font-size="32" fill="url(#gr)" font-weight="700">▶</text>
+  <text x="180" y="633" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#e8e8f0">Breakdowns — how each system actually works</text>
+
+  <rect x="80" y="678" width="920" height="78" rx="12" fill="#16161f" stroke="rgba(0,210,255,0.15)" stroke-width="1"/>
+  <text x="130" y="727" font-family="'Segoe UI',system-ui,sans-serif" font-size="32" fill="url(#gr)" font-weight="700">▶</text>
+  <text x="180" y="727" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#e8e8f0">Honest takes on AI, automation &amp; tools</text>
+
+  <rect x="80" y="772" width="920" height="78" rx="12" fill="#16161f" stroke="rgba(0,210,255,0.1)" stroke-width="1"/>
+  <text x="130" y="821" font-family="'Segoe UI',system-ui,sans-serif" font-size="32" fill="url(#gr)" font-weight="700">▶</text>
+  <text x="180" y="821" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#e8e8f0">What's actually possible with n8n + OpenAI</text>
+
+  <text x="540" y="910" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#8888a0" text-anchor="middle">No fluff. No theory. Just what works.</text>
+
+  <!-- Bottom -->
+  <text x="80" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="28" font-weight="700" fill="#6c5ce7">@efiayomideai</text>
+  <text x="1000" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" fill="#8888a0" text-anchor="end">swipe →</text>
+  <rect x="0" y="1070" width="1080" height="10" fill="url(#gr)" fill-opacity="0.6"/>
+</svg>

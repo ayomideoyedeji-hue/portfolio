@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d18"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <linearGradient id="gr" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <circle cx="540" cy="400" r="380" fill="#6c5ce7" fill-opacity="0.05"/>
+
+  <!-- Slide number -->
+  <text x="80" y="110" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" fill="#8888a0" letter-spacing="2">05 / 07</text>
+  <rect x="80" y="120" width="920" height="1.5" fill="white" fill-opacity="0.06"/>
+
+  <!-- Eyebrow -->
+  <rect x="80" y="180" width="6" height="60" rx="3" fill="url(#gr)"/>
+  <text x="106" y="222" font-family="'Segoe UI',system-ui,sans-serif" font-size="26" font-weight="700" fill="#6c5ce7" letter-spacing="2">THE TRUTH</text>
+
+  <!-- Big quote -->
+  <text x="80" y="360" font-family="'Segoe UI',system-ui,sans-serif" font-size="120" fill="url(#gr)" fill-opacity="0.3" font-weight="900">"</text>
+
+  <text x="80" y="430" font-family="'Segoe UI',system-ui,sans-serif" font-size="64" font-weight="800" fill="#e8e8f0" letter-spacing="-2">None of these</text>
+  <text x="80" y="510" font-family="'Segoe UI',system-ui,sans-serif" font-size="64" font-weight="800" fill="#e8e8f0" letter-spacing="-2">required a</text>
+  <text x="80" y="590" font-family="'Segoe UI',system-ui,sans-serif" font-size="64" font-weight="800" fill="url(#gr)" letter-spacing="-2">traditional backend.</text>
+
+  <!-- 3 pillars -->
+  <rect x="80" y="660" width="280" height="130" rx="16" fill="#16161f" stroke="rgba(108,92,231,0.25)" stroke-width="1"/>
+  <text x="220" y="720" font-family="'Segoe UI',system-ui,sans-serif" font-size="34" text-anchor="middle" fill="url(#gr)">🧠</text>
+  <text x="220" y="760" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700" fill="#e8e8f0" text-anchor="middle">Systems</text>
+  <text x="220" y="785" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700" fill="#e8e8f0" text-anchor="middle">Thinking</text>
+
+  <rect x="400" y="660" width="280" height="130" rx="16" fill="#16161f" stroke="rgba(108,92,231,0.25)" stroke-width="1"/>
+  <text x="540" y="720" font-family="'Segoe UI',system-ui,sans-serif" font-size="34" text-anchor="middle" fill="url(#gr)">🔧</text>
+  <text x="540" y="760" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700" fill="#e8e8f0" text-anchor="middle">The Right</text>
+  <text x="540" y="785" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700" fill="#e8e8f0" text-anchor="middle">Tools</text>
+
+  <rect x="720" y="660" width="280" height="130" rx="16" fill="#16161f" stroke="rgba(108,92,231,0.25)" stroke-width="1"/>
+  <text x="860" y="720" font-family="'Segoe UI',system-ui,sans-serif" font-size="34" text-anchor="middle" fill="url(#gr)">🔗</text>
+  <text x="860" y="760" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700" fill="#e8e8f0" text-anchor="middle">Knowing</text>
+  <text x="860" y="785" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="700" fill="#e8e8f0" text-anchor="middle">What to Connect</text>
+
+  <text x="540" y="870" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#8888a0" text-anchor="middle">That's the entire formula.</text>
+
+  <!-- Bottom -->
+  <text x="80" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="28" font-weight="700" fill="#6c5ce7">@efiayomideai</text>
+  <text x="1000" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" fill="#8888a0" text-anchor="end">swipe →</text>
+  <rect x="0" y="1070" width="1080" height="10" fill="url(#gr)" fill-opacity="0.6"/>
+</svg>

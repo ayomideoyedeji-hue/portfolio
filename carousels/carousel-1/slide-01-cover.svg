@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d18"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <linearGradient id="gr" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+    <linearGradient id="grV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Ambient glow blobs -->
+  <circle cx="200" cy="200" r="300" fill="#6c5ce7" fill-opacity="0.07"/>
+  <circle cx="900" cy="900" r="350" fill="#00d2ff" fill-opacity="0.06"/>
+
+  <!-- Grid lines -->
+  <line x1="0" y1="540" x2="1080" y2="540" stroke="white" stroke-opacity="0.03" stroke-width="1"/>
+  <line x1="540" y1="0" x2="540" y2="1080" stroke="white" stroke-opacity="0.03" stroke-width="1"/>
+
+  <!-- Top gradient bar -->
+  <rect x="80" y="80" width="160" height="5" rx="3" fill="url(#gr)"/>
+
+  <!-- Tag -->
+  <rect x="80" y="110" width="220" height="40" rx="20" fill="none" stroke="url(#gr)" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="190" y="136" font-family="'Segoe UI',system-ui,sans-serif" font-size="18" font-weight="600" fill="#6c5ce7" text-anchor="middle" letter-spacing="3">AI ENGINEER</text>
+
+  <!-- Main headline -->
+  <text x="80" y="340" font-family="'Segoe UI',system-ui,sans-serif" font-size="86" font-weight="800" fill="#e8e8f0" letter-spacing="-2">I build AI</text>
+  <text x="80" y="440" font-family="'Segoe UI',system-ui,sans-serif" font-size="86" font-weight="800" fill="#e8e8f0" letter-spacing="-2">systems that</text>
+  <text x="80" y="540" font-family="'Segoe UI',system-ui,sans-serif" font-size="86" font-weight="800" fill="url(#gr)" letter-spacing="-2">run businesses</text>
+  <text x="80" y="640" font-family="'Segoe UI',system-ui,sans-serif" font-size="86" font-weight="800" fill="#e8e8f0" letter-spacing="-2">automatically.</text>
+
+  <!-- Subtext -->
+  <text x="80" y="730" font-family="'Segoe UI',system-ui,sans-serif" font-size="34" fill="#8888a0" letter-spacing="0">Here's what that actually means</text>
+
+  <!-- Arrow down -->
+  <text x="80" y="780" font-family="'Segoe UI',system-ui,sans-serif" font-size="38" fill="url(#gr)">👇</text>
+
+  <!-- Bottom: handle + swipe -->
+  <text x="80" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="28" font-weight="700" fill="#6c5ce7">@efiayomideai</text>
+  <text x="1000" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" fill="#8888a0" text-anchor="end">swipe →</text>
+
+  <!-- Bottom border -->
+  <rect x="0" y="1070" width="1080" height="10" rx="0" fill="url(#gr)" fill-opacity="0.6"/>
+</svg>

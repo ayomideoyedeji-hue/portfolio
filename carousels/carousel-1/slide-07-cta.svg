@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d18"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <linearGradient id="gr" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+    <linearGradient id="grV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Strong center glow -->
+  <circle cx="540" cy="480" r="360" fill="#6c5ce7" fill-opacity="0.1" filter="url(#glow)"/>
+  <circle cx="540" cy="480" r="200" fill="#00d2ff" fill-opacity="0.05"/>
+
+  <!-- Slide number -->
+  <text x="80" y="110" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" fill="#8888a0" letter-spacing="2">07 / 07</text>
+  <rect x="80" y="120" width="920" height="1.5" fill="white" fill-opacity="0.06"/>
+
+  <!-- Center content -->
+  <text x="540" y="310" font-family="'Segoe UI',system-ui,sans-serif" font-size="42" fill="#8888a0" text-anchor="middle">Want to see AI doing things</text>
+  <text x="540" y="365" font-family="'Segoe UI',system-ui,sans-serif" font-size="42" fill="#8888a0" text-anchor="middle">it wasn't supposed to do?</text>
+
+  <!-- Big CTA -->
+  <text x="540" y="500" font-family="'Segoe UI',system-ui,sans-serif" font-size="96" font-weight="900" fill="url(#gr)" text-anchor="middle" letter-spacing="-2">Follow.</text>
+
+  <!-- Handle box -->
+  <rect x="240" y="540" width="600" height="100" rx="50" fill="url(#gr)" fill-opacity="0.12" stroke="url(#gr)" stroke-width="2"/>
+  <text x="540" y="603" font-family="'Segoe UI',system-ui,sans-serif" font-size="44" font-weight="800" fill="#e8e8f0" text-anchor="middle">@efiayomideai</text>
+
+  <!-- Divider -->
+  <rect x="440" y="680" width="200" height="2" rx="1" fill="url(#gr)" fill-opacity="0.4"/>
+
+  <!-- Tagline -->
+  <text x="540" y="740" font-family="'Segoe UI',system-ui,sans-serif" font-size="30" fill="#8888a0" text-anchor="middle">n8n  ·  OpenAI  ·  AI Automation</text>
+
+  <!-- Emoji row -->
+  <text x="540" y="820" font-family="'Segoe UI',system-ui,sans-serif" font-size="46" text-anchor="middle">🤖  ⚡  🔗</text>
+
+  <!-- Bottom -->
+  <text x="80" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="28" font-weight="700" fill="#6c5ce7">@efiayomideai</text>
+  <text x="1000" y="980" font-family="'Segoe UI',system-ui,sans-serif" font-size="22" fill="#8888a0" text-anchor="end">save this 🔖</text>
+  <rect x="0" y="1070" width="1080" height="10" fill="url(#gr)" fill-opacity="0.6"/>
+</svg>
