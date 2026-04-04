@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Day Email Agent — Case Study | Efioshomoshi Oyedeji</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f; --bg-card: #16161f; --text-primary: #e8e8f0;
+            --text-secondary: #8888a0; --accent: #6c5ce7; --accent-glow: rgba(108,92,231,0.4);
+            --gradient: linear-gradient(135deg, #6c5ce7, #00d2ff); --border: rgba(255,255,255,0.06);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10,10,15,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-size: 1.1rem; font-weight: 700; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .nav-back { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.3s; }
+        .nav-back:hover { color: var(--text-primary); }
+        .case-hero { padding: 8rem 2rem 4rem; max-width: 860px; margin: 0 auto; }
+        .case-tag { display: inline-block; padding: 0.3rem 1rem; border: 1px solid var(--accent); border-radius: 50px; font-size: 0.75rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .case-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1rem; }
+        .case-hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .case-hero .subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 640px; margin-bottom: 2.5rem; }
+        .case-meta { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .meta-item label { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); margin-bottom: 0.3rem; }
+        .meta-item span { font-size: 0.9rem; font-weight: 600; }
+        .case-content { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .section-block { margin-bottom: 4rem; }
+        .section-block h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+        .section-block h2 .num { width: 32px; height: 32px; border-radius: 8px; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; color: white; flex-shrink: 0; }
+        .section-block p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1rem; }
+        .section-block p strong { color: var(--text-primary); }
+        .flow-diagram { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2rem 0; }
+        .flow-diagram h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .flow-steps { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+        .flow-step { background: rgba(108,92,231,0.12); border: 1px solid rgba(108,92,231,0.25); border-radius: 8px; padding: 0.5rem 0.9rem; font-size: 0.82rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+        .flow-step.highlight { background: rgba(108,92,231,0.25); border-color: var(--accent); color: white; }
+        .flow-arrow { color: var(--text-secondary); font-size: 0.9rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .result-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; text-align: center; transition: border-color 0.3s; }
+        .result-card:hover { border-color: rgba(108,92,231,0.4); }
+        .result-card .result-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+        .result-card .result-val { font-size: 1.4rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; margin-bottom: 0.3rem; }
+        .result-card .result-label { font-size: 0.8rem; color: var(--text-secondary); }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag { padding: 0.3rem 0.8rem; background: rgba(108,92,231,0.1); border: 1px solid rgba(108,92,231,0.2); border-radius: 6px; font-size: 0.78rem; color: var(--accent); }
+        .case-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; text-align: center; position: relative; overflow: hidden; margin-top: 4rem; }
+        .case-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); }
+        .case-cta h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+        .case-cta p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .btn-primary { display: inline-block; padding: 0.8rem 2rem; background: var(--gradient); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 20px var(--accent-glow); transition: all 0.3s; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px var(--accent-glow); }
+        @media (max-width: 768px) { .case-meta { gap: 1.2rem; } .case-cta { padding: 2rem 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">EO</a>
+        <a href="index.html#projects" class="nav-back">← Back to Projects</a>
+    </nav>
+    <div class="case-hero">
+        <div class="case-tag">Case Study</div>
+        <h1>Easy Day —<br><span>AI Email Assistant Agent</span></h1>
+        <p class="subtitle">An always-on AI assistant that manages your inbox, responds to emails, books calendar events, logs activity, and notifies you on Slack — so your email runs itself.</p>
+        <div class="case-meta">
+            <div class="meta-item"><label>Platform</label><span>n8n Cloud</span></div>
+            <div class="meta-item"><label>AI Model</label><span>GPT-4o</span></div>
+            <div class="meta-item"><label>Nodes</label><span>9</span></div>
+            <div class="meta-item"><label>Type</label><span>Productivity Automation</span></div>
+        </div>
+    </div>
+    <div class="case-content">
+        <div class="section-block">
+            <h2><span class="num">1</span> The Problem</h2>
+            <p>Email is one of the biggest drains on a professional's day. Most emails follow predictable patterns — scheduling requests, follow-ups, confirmations, FAQs — yet each one demands manual attention. <strong>The average knowledge worker spends over 2 hours a day in their inbox</strong>, much of it on responses that are formulaic.</p>
+            <p>The goal was to build an agent that could handle routine email autonomously — reading context, drafting appropriate responses, managing calendar implications, and logging everything — without the user needing to open their inbox for every message.</p>
+        </div>
+        <div class="section-block">
+            <h2><span class="num">2</span> How It Works</h2>
+            <p>The workflow triggers instantly on every new incoming email and hands it off to an AI agent with access to Gmail, Google Calendar, and memory tools.</p>
+            <div class="flow-diagram">
+                <h3>Workflow Flow</h3>
+                <div class="flow-steps">
+                    <span class="flow-step highlight">New Email Received</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step highlight">Email Assistant Agent (GPT-4o)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">Gmail Tool</span>
+                    <span class="flow-step">Google Calendar Tool</span>
+                    <span class="flow-step">Simple Memory</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">Log to Google Sheets</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step highlight">Slack Notification</span>
+                </div>
+            </div>
+            <p>The <strong>AI agent</strong> receives the full email and decides what action to take. It has tools available to it: <strong>Gmail Tool</strong> to draft and send replies, <strong>Google Calendar Tool</strong> to check availability and create events, and <strong>Simple Memory</strong> to maintain context across a conversation thread. Every action is logged to Google Sheets and a Slack notification is sent so the user stays informed without being in the loop for every email.</p>
+        </div>
+        <div class="section-block">
+            <h2><span class="num">3</span> The Result</h2>
+            <div class="results-grid">
+                <div class="result-card"><div class="result-icon">📧</div><span class="result-val">Auto</span><span class="result-label">Replies drafted & sent</span></div>
+                <div class="result-card"><div class="result-icon">📅</div><span class="result-val">Instant</span><span class="result-label">Calendar events created</span></div>
+                <div class="result-card"><div class="result-icon">🧠</div><span class="result-val">Context</span><span class="result-label">Thread memory maintained</span></div>
+                <div class="result-card"><div class="result-icon">🔔</div><span class="result-val">Slack</span><span class="result-label">Notifications for every action</span></div>
+            </div>
+            <p>Routine emails are handled end-to-end without opening the inbox. <strong>The user only intervenes for emails the agent flags as requiring human judgment.</strong> Every action is traceable via the Sheets log and Slack feed.</p>
+        </div>
+        <div class="section-block">
+            <h2><span class="num">4</span> Tech Stack</h2>
+            <div class="tag-list">
+                <span class="tag">n8n</span><span class="tag">GPT-4o</span><span class="tag">Gmail</span>
+                <span class="tag">Google Calendar</span><span class="tag">Slack</span>
+                <span class="tag">Google Sheets</span><span class="tag">Simple Memory</span>
+            </div>
+        </div>
+        <div class="case-cta">
+            <h3>Want an AI assistant managing your inbox?</h3>
+            <p>I can build a custom email agent tuned to your workflow and communication style.</p>
+            <a href="index.html#contact" class="btn-primary">Get In Touch</a>
+        </div>
+    </div>
+</body>
+</html>

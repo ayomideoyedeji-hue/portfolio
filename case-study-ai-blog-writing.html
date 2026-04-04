@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Blog Writing Pipeline — Case Study | Efioshomoshi Oyedeji</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f; --bg-card: #16161f; --text-primary: #e8e8f0;
+            --text-secondary: #8888a0; --accent: #6c5ce7; --accent-glow: rgba(108,92,231,0.4);
+            --gradient: linear-gradient(135deg, #6c5ce7, #00d2ff); --border: rgba(255,255,255,0.06);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10,10,15,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-size: 1.1rem; font-weight: 700; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .nav-back { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; transition: color 0.3s; }
+        .nav-back:hover { color: var(--text-primary); }
+        .case-hero { padding: 8rem 2rem 4rem; max-width: 860px; margin: 0 auto; }
+        .case-tag { display: inline-block; padding: 0.3rem 1rem; border: 1px solid var(--accent); border-radius: 50px; font-size: 0.75rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .case-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1rem; }
+        .case-hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .case-hero .subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 640px; margin-bottom: 2.5rem; }
+        .case-meta { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .meta-item label { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); margin-bottom: 0.3rem; }
+        .meta-item span { font-size: 0.9rem; font-weight: 600; }
+        .case-content { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .section-block { margin-bottom: 4rem; }
+        .section-block h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+        .section-block h2 .num { width: 32px; height: 32px; border-radius: 8px; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; color: white; flex-shrink: 0; }
+        .section-block p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1rem; }
+        .section-block p strong { color: var(--text-primary); }
+        .flow-diagram { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2rem 0; }
+        .flow-diagram h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .flow-steps { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+        .flow-step { background: rgba(108,92,231,0.12); border: 1px solid rgba(108,92,231,0.25); border-radius: 8px; padding: 0.5rem 0.9rem; font-size: 0.82rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+        .flow-step.highlight { background: rgba(108,92,231,0.25); border-color: var(--accent); color: white; }
+        .flow-arrow { color: var(--text-secondary); font-size: 0.9rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .result-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; text-align: center; transition: border-color 0.3s; }
+        .result-card:hover { border-color: rgba(108,92,231,0.4); }
+        .result-card .result-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+        .result-card .result-val { font-size: 1.4rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; margin-bottom: 0.3rem; }
+        .result-card .result-label { font-size: 0.8rem; color: var(--text-secondary); }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag { padding: 0.3rem 0.8rem; background: rgba(108,92,231,0.1); border: 1px solid rgba(108,92,231,0.2); border-radius: 6px; font-size: 0.78rem; color: var(--accent); }
+        .case-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; text-align: center; position: relative; overflow: hidden; margin-top: 4rem; }
+        .case-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); }
+        .case-cta h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+        .case-cta p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .btn-primary { display: inline-block; padding: 0.8rem 2rem; background: var(--gradient); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 20px var(--accent-glow); transition: all 0.3s; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px var(--accent-glow); }
+        @media (max-width: 768px) { .case-meta { gap: 1.2rem; } .case-cta { padding: 2rem 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">EO</a>
+        <a href="index.html#projects" class="nav-back">← Back to Projects</a>
+    </nav>
+    <div class="case-hero">
+        <div class="case-tag">Case Study</div>
+        <h1>AI Blog Writing —<br><span>Automated Content Pipeline</span></h1>
+        <p class="subtitle">A fully automated content creation system that takes a topic from Airtable, researches it, writes a long-form blog post with AI, and delivers it to Google Docs — ready to publish.</p>
+        <div class="case-meta">
+            <div class="meta-item"><label>Platform</label><span>n8n Cloud</span></div>
+            <div class="meta-item"><label>AI Model</label><span>OpenAI GPT-4o</span></div>
+            <div class="meta-item"><label>Nodes</label><span>9</span></div>
+            <div class="meta-item"><label>Type</label><span>Content Automation</span></div>
+        </div>
+    </div>
+    <div class="case-content">
+        <div class="section-block">
+            <h2><span class="num">1</span> The Problem</h2>
+            <p>Content teams spend enormous time on blog production — researching topics, drafting outlines, writing, editing, and formatting. For businesses that need consistent content output, <strong>this is a bottleneck that limits publishing frequency and strains resources.</strong></p>
+            <p>The goal was to build a pipeline where a content manager adds a topic to a simple Airtable tracker and the rest happens automatically — research, writing, and delivery to a ready-to-edit Google Doc.</p>
+        </div>
+        <div class="section-block">
+            <h2><span class="num">2</span> How It Works</h2>
+            <p>The workflow triggers when a new row is added to Airtable, then orchestrates research and writing without any further human input.</p>
+            <div class="flow-diagram">
+                <h3>Workflow Flow</h3>
+                <div class="flow-steps">
+                    <span class="flow-step highlight">Airtable Trigger (New Topic)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">HTTP Request (Web Research)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">Code (Process Research)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step highlight">AI Writing Agent (GPT-4o)</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">Create Google Doc</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step highlight">Gmail Notification</span>
+                </div>
+            </div>
+            <p>An <strong>HTTP Request node</strong> pulls live research data for the topic. A <strong>JavaScript Code node</strong> cleans and structures the research into a prompt-ready format. The <strong>AI Writing Agent</strong> then produces a full long-form article using the research as grounding context — not hallucinating, but writing from real data. The article is saved to <strong>Google Docs</strong> and an email notification is sent with the document link.</p>
+        </div>
+        <div class="section-block">
+            <h2><span class="num">3</span> The Result</h2>
+            <div class="results-grid">
+                <div class="result-card"><div class="result-icon">✍️</div><span class="result-val">Full post</span><span class="result-label">Per Airtable row added</span></div>
+                <div class="result-card"><div class="result-icon">🔍</div><span class="result-val">Grounded</span><span class="result-label">Research-backed writing</span></div>
+                <div class="result-card"><div class="result-icon">📄</div><span class="result-val">Google Doc</span><span class="result-label">Ready to edit & publish</span></div>
+                <div class="result-card"><div class="result-icon">⏱️</div><span class="result-val">Hours → 0</span><span class="result-label">Manual writing time</span></div>
+            </div>
+            <p>A content manager adds a topic title to Airtable and receives a complete draft in their inbox minutes later. <strong>The AI writes from real research</strong>, not generic knowledge — producing content that's relevant and specific rather than generic filler.</p>
+        </div>
+        <div class="section-block">
+            <h2><span class="num">4</span> Tech Stack</h2>
+            <div class="tag-list">
+                <span class="tag">n8n</span><span class="tag">Airtable</span><span class="tag">GPT-4o</span>
+                <span class="tag">HTTP Request</span><span class="tag">Google Docs</span><span class="tag">Gmail</span><span class="tag">JavaScript</span>
+            </div>
+        </div>
+        <div class="case-cta">
+            <h3>Need automated content production for your business?</h3>
+            <p>I can build a writing pipeline tuned to your brand voice and content strategy.</p>
+            <a href="index.html#contact" class="btn-primary">Get In Touch</a>
+        </div>
+    </div>
+</body>
+</html>
