@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" width="480" height="100">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+    <linearGradient id="wordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7"/>
+      <stop offset="100%" stop-color="#00d2ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── ICON (90×100 canvas) ── -->
+
+  <!-- Soft background circle -->
+  <circle cx="50" cy="50" r="44" fill="url(#iconGrad)" fill-opacity="0.08"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="url(#iconGrad)" stroke-width="1" stroke-opacity="0.25"/>
+
+  <!-- Connection lines (drawn first, behind nodes) -->
+  <!-- Center → Top -->
+  <line x1="50" y1="22" x2="50" y2="41" stroke="url(#iconGrad)" stroke-width="2" stroke-opacity="0.7"/>
+  <!-- Center → Bottom-left -->
+  <line x1="44" y1="57" x2="27" y2="72" stroke="url(#iconGrad)" stroke-width="2" stroke-opacity="0.7"/>
+  <!-- Center → Bottom-right -->
+  <line x1="56" y1="57" x2="73" y2="72" stroke="url(#iconGrad)" stroke-width="2" stroke-opacity="0.7"/>
+  <!-- Center → Right -->
+  <line x1="59" y1="47" x2="74" y2="30" stroke="url(#iconGrad)" stroke-width="1.5" stroke-opacity="0.45"/>
+  <!-- Bottom-left → Bottom-right -->
+  <line x1="27" y1="72" x2="73" y2="72" stroke="url(#iconGrad)" stroke-width="1.5" stroke-opacity="0.35"/>
+
+  <!-- Outer node rings (pulse effect) -->
+  <circle cx="50" cy="18" r="9" fill="none" stroke="url(#iconGrad)" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="25" cy="76" r="8" fill="none" stroke="url(#iconGrad)" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="75" cy="76" r="8" fill="none" stroke="url(#iconGrad)" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- Nodes (filled) -->
+  <!-- Top -->
+  <circle cx="50" cy="18" r="5.5" fill="url(#iconGrad)" filter="url(#glow)"/>
+  <!-- Bottom-left -->
+  <circle cx="25" cy="76" r="5" fill="url(#iconGrad)" filter="url(#glow)"/>
+  <!-- Bottom-right -->
+  <circle cx="75" cy="76" r="5" fill="url(#iconGrad)" filter="url(#glow)"/>
+  <!-- Right (secondary) -->
+  <circle cx="76" cy="27" r="4" fill="url(#iconGrad)" fill-opacity="0.75"/>
+  <!-- Center (main hub) -->
+  <circle cx="50" cy="50" r="7" fill="url(#iconGrad)" filter="url(#glow)"/>
+  <circle cx="50" cy="50" r="3.5" fill="white" fill-opacity="0.9"/>
+
+  <!-- ── WORDMARK ── -->
+
+  <!-- "Efiayomide" -->
+  <text
+    x="108" y="57"
+    font-family="'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="38"
+    font-weight="800"
+    letter-spacing="-1"
+    fill="#e8e8f0">Efiayomide</text>
+
+  <!-- "AI" in gradient -->
+  <text
+    x="405" y="57"
+    font-family="'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="38"
+    font-weight="800"
+    letter-spacing="-1"
+    fill="url(#wordGrad)"> AI</text>
+</svg>
